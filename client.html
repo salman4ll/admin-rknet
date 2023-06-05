@@ -73,7 +73,7 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse3"
                     aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-shopping-basket fa-folder"></i>
@@ -81,13 +81,13 @@
                 </a>
                 <div id="collapse3" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item active" href="produk.html">View</a>
+                        <a class="collapse-item" href="produk.html">View</a>
                         <a class="collapse-item" href="add-produk.html">Add Produk</a>
                     </div>
                 </div>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse4"
                     aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-user fa-folder"></i>
@@ -95,7 +95,7 @@
                 </a>
                 <div id="collapse4" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="client.html">View</a>
+                        <a class="collapse-item active" href="client.html">View</a>
                         <a class="collapse-item" href="add-client.html">Add Produk</a>
                     </div>
                 </div>
@@ -157,11 +157,11 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Produk</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Client</h1>
                     </div>
 
                     <div class="bg-light clearfix" style="margin-right: 60px; margin-bottom: 20px;">  
-                        <a href="add-layanan.html" class="btn btn-success float-right" role="button" aria-disabled="true">Tambah Produk</a>
+                        <a href="add-client.html" class="btn btn-success float-right" role="button" aria-disabled="true">Tambah Produk</a>
                     </div>
 
                     <!-- Content Row -->
@@ -171,9 +171,8 @@
 							    <table class="table table-bordered table-striped" id="produk">
                                     <thead>
                                         <tr class="table">
-                                            <th scope="col">Nama Produk</th>
-                                            <th scope="col">Deskripsi</th>
-                                            <th scope="col">Harga</th>
+                                            <th scope="col">Nama</th>
+                                            <th scope="col">Lokasi</th>
                                             <th scope="col">Actions</th>
                                         </tr>
                                     </thead>
@@ -206,7 +205,7 @@
     <script>
         $.ajax(
             {
-                url:'https://ap-southeast-1.aws.data.mongodb-api.com/app/rk-net-fhifn/endpoint/rkharga',
+                url:'https://ap-southeast-1.aws.data.mongodb-api.com/app/rk-net-wjgwl/endpoint/get_client',
                 type: 'GET',
                 beforeSend: ()=>{
                     $('#produk tbody').html('<tr><td colspan="3">Data sedang di-load ...</td></tr>');
@@ -221,9 +220,8 @@
                     $.each(res, (index, data)=>{
                         $('#produk tbody').append(
                             '<tr>'+
-                                '<td>'+data.title+'</td>'+
-                                '<td>'+data.deskripsi+'</td>'+
-                                '<td>'+data.harga+'</td>'+
+                                '<td>'+data.nama+'</td>'+
+                                '<td>'+data.lokasi+'</td>'+                                
                                 '<td><button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button> &nbsp; <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button></td>'+
                             '</tr>'    
                         );

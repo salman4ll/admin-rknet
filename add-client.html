@@ -6,10 +6,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>RKNET - Produk</title>
-	<link rel="icon" href="assets/icon.png" type="image/x-icon">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>RKNET - Tambah Produk</title>
     <link rel="stylesheet" href="css/admin.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+	<link rel="shortcut icon" href="assets/icon.png" type="image/x-icon">
     
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
@@ -73,7 +75,7 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse3"
                     aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-shopping-basket fa-folder"></i>
@@ -81,13 +83,13 @@
                 </a>
                 <div id="collapse3" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item active" href="produk.html">View</a>
+                        <a class="collapse-item" href="produk.html">View</a>
                         <a class="collapse-item" href="add-produk.html">Add Produk</a>
                     </div>
                 </div>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse4"
                     aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-user fa-folder"></i>
@@ -96,7 +98,7 @@
                 <div id="collapse4" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="client.html">View</a>
-                        <a class="collapse-item" href="add-client.html">Add Produk</a>
+                        <a class="collapse-item active" href="add-client.html">Add Produk</a>
                     </div>
                 </div>
             </li>
@@ -157,43 +159,27 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Produk</h1>
-                    </div>
-
-                    <div class="bg-light clearfix" style="margin-right: 60px; margin-bottom: 20px;">  
-                        <a href="add-layanan.html" class="btn btn-success float-right" role="button" aria-disabled="true">Tambah Produk</a>
+                        <a href="client.html"><h1 class="h3 mb-0 text-gray-800">Client &raquo; Tambah Client</h1></a>
                     </div>
 
                     <!-- Content Row -->
                     <div class="container">
-						<div class="row">
-						    <div class="col-12 table-responsive text-nowrap">
-							    <table class="table table-bordered table-striped" id="produk">
-                                    <thead>
-                                        <tr class="table">
-                                            <th scope="col">Nama Produk</th>
-                                            <th scope="col">Deskripsi</th>
-                                            <th scope="col">Harga</th>
-                                            <th scope="col">Actions</th>
-                                        </tr>
-                                    </thead>
-							        <tbody>
-							        </tbody>
-							    </table>
-						    </div>
-                            
-						</div>
-                        <footer class="bg-light text-center text-lg-start">
-                            <!-- Copyright -->
-                            <div class="text-center p-3">
-                              &copy; 2023 Copyright:
-                              <a class="text-dark" href="https://RKNET.com/">RKNET.com</a>
+						<form id="form">
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">nama</label>
+                                <input type="text" class="form-control" id="namanya" placeholder="Salman Al-Farisi">
                             </div>
-                            <!-- Copyright -->
-                          </footer>
-                          
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">lokasi</label>
+                                <input type="text" class="form-control" id="lokasinya" placeholder="Indramayu">
+                            </div>
+                            
+                            <div class="bg-light clearfix">  
+                                <button type="submit" class="btn btn-success float-right">Submit</button>
+                            </div>
+                        </form>
 					</div>
-
+                    
                         
 
     <!-- Bootstrap core JavaScript-->
@@ -202,39 +188,34 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
-    
+
     <script>
-        $.ajax(
-            {
-                url:'https://ap-southeast-1.aws.data.mongodb-api.com/app/rk-net-fhifn/endpoint/rkharga',
-                type: 'GET',
-                beforeSend: ()=>{
-                    $('#produk tbody').html('<tr><td colspan="3">Data sedang di-load ...</td></tr>');
-                },
-                success: (res)=>{
-                    $('#produk tbody').html('');
-
-                    if(! res.length){//kalau koleksi kosong
-                        $('#produk tbody').html('<tr><td colspan="3">Belum ada datanya ...</td></tr>');
-                    }
-
-                    $.each(res, (index, data)=>{
-                        $('#produk tbody').append(
-                            '<tr>'+
-                                '<td>'+data.title+'</td>'+
-                                '<td>'+data.deskripsi+'</td>'+
-                                '<td>'+data.harga+'</td>'+
-                                '<td><button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button> &nbsp; <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button></td>'+
-                            '</tr>'    
-                        );
-                      }
-                    );
-                },
-                error: (err)=>{
-                    console.log(err);
-                }
-            }
-        );
+        $('#form').submit(
+			()=>{
+			   $.ajax(
+				{
+				 url:'https://ap-southeast-1.aws.data.mongodb-api.com/app/rk-net-wjgwl/endpoint/post_client',
+				 type:'POST',
+				 dataPost:{                    
+					nama:$('#namanya').val(),
+					lokasi:$('#lokasinya').val(),
+				      },
+				 beforeSend:()=>{$('#form button').prop('disabled',true);},
+				 success:(res)=>{
+				              $('#form button').prop('disabled',false);
+						      window.location="client.html";
+						   },
+				 error:(err)=>{
+							$('#form button').prop('disabled',false);
+							console.log(err);	
+						}
+				}
+			   );
+			   return false;
+			}
+		);
     </script>
+
 </body>
+
 </html>

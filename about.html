@@ -90,6 +90,20 @@
                 </div>
             </li>
 
+			<li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse4"
+                    aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-user fa-folder"></i>
+                    <span>client</span>
+                </a>
+                <div id="collapse4" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="client.html">View</a>
+                        <a class="collapse-item" href="add-client.html">Add Produk</a>
+                    </div>
+                </div>
+            </li>
+
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
@@ -160,7 +174,7 @@
 					</div>
 					<div class="row">
 						<div class="col-12 table-responsive text-nowrap">
-							<table class="table table-bordered table-striped">
+							<table class="table table-bordered table-striped" id="tentang-kami">
 								<thead>
 									<tr class="table">
 										<th scope="col">Deskripsi</th>
@@ -168,13 +182,6 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr class="table">
-										<td>DeskripsiDeskripsiDeskripsiDeskripsiDeskripsiDeskripsiDeskripsi</td>
-										<td>
-										<button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>
-										</td>
-									</tr>
-									
 								</tbody>
 							</table>
 						</div>
@@ -190,6 +197,37 @@
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
 
+	<script>
+        $.ajax(
+            {
+                url:'https://ap-southeast-1.aws.data.mongodb-api.com/app/rk-net-lxgkq/endpoint/rktentangkami',
+                type: 'GET',
+                beforeSend: ()=>{
+                    $('#tentang-kami tbody').html('<tr><td colspan="3">Data sedang di-load ...</td></tr>');
+                },
+                success: (res)=>{
+                    $('#tentang-kami tbody').html('');
+
+                    if(! res.length){//kalau koleksi kosong
+                        $('#tentang-kami tbody').html('<tr><td colspan="3">Belum ada datanya ...</td></tr>');
+                    }
+
+                    $.each(res, (index, data)=>{
+                        $('#tentang-kami tbody').append(
+                            '<tr>'+
+                                '<td>'+data.tentang+'</td>'+
+                                '<td><button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button></td>'+
+                            '</tr>'    
+                        );
+                      }
+                    );
+                },
+                error: (err)=>{
+                    console.log(err);
+                }
+            }
+        );
+    </script>
     
 
 </body>
