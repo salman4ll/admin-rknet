@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>RKNET - Tambah Produk</title>
-    <link rel="stylesheet" href="css/admin.css">
+    
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
 	<link rel="shortcut icon" href="assets/icon.png" type="image/x-icon">
     
@@ -119,7 +119,7 @@
                     </button>
                     <ul class="navbar-nav me-auto" id="ul-nav">
 						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="login.html" id="item">&laquo;Kembali ke Situs&nbsp;<i class="fa fa-globe"></i></a>
+							<a class="nav-link active" aria-current="page" href="http://rknet.id/" id="item">&laquo;Kembali ke Situs&nbsp;<i class="fa fa-globe"></i></a>
 						</li>
 					</ul>
                     <ul class="navbar-nav ml-auto">
@@ -166,12 +166,16 @@
                     <div class="container">
 						<form id="form">
                             <div class="form-group">
-                                <label for="exampleFormControlInput1">nama</label>
-                                <input type="text" class="form-control" id="namanya" placeholder="Salman Al-Farisi">
+                                <label for="exampleFormControlInput1">Nomor</label>
+                                <input type="number" class="form-control" id="idnya" placeholder="Masukkan id client" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Nama</label>
+                                <input type="text" class="form-control" id="namanya" placeholder="Masukkan Nama CLient" required>
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">lokasi</label>
-                                <input type="text" class="form-control" id="lokasinya" placeholder="Indramayu">
+                                <input type="text" class="form-control" id="lokasinya" placeholder="Masukkan Alamat Client" required>
                             </div>
                             
                             <div class="bg-light clearfix">  
@@ -185,36 +189,9 @@
     <!-- Bootstrap core JavaScript-->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
-
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
-
-    <script>
-        $('#form').submit(
-			()=>{
-			   $.ajax(
-				{
-				 url:'https://ap-southeast-1.aws.data.mongodb-api.com/app/rk-net-wjgwl/endpoint/post_client',
-				 type:'POST',
-				 dataPost:{                    
-					nama:$('#namanya').val(),
-					lokasi:$('#lokasinya').val(),
-				      },
-				 beforeSend:()=>{$('#form button').prop('disabled',true);},
-				 success:(res)=>{
-				              $('#form button').prop('disabled',false);
-						      window.location="client.html";
-						   },
-				 error:(err)=>{
-							$('#form button').prop('disabled',false);
-							console.log(err);	
-						}
-				}
-			   );
-			   return false;
-			}
-		);
-    </script>
+    <script src="js/client.js"></script>
 
 </body>
 

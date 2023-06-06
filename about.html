@@ -130,7 +130,7 @@
                     </button>
                     <ul class="navbar-nav me-auto" id="ul-nav">
 						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="login.html" id="item">&laquo;Kembali ke Situs&nbsp;<i class="fa fa-globe"></i></a>
+							<a class="nav-link" aria-current="page" href="http://rknet.id/" id="item">&laquo;Kembali ke Situs&nbsp;<i class="fa fa-globe"></i></a>
 						</li>
 					</ul>
                     <ul class="navbar-nav ml-auto">
@@ -172,21 +172,13 @@
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">About Us</h1>
 					</div>
-					<div class="row">
-						<div class="col-12 table-responsive text-nowrap">
-							<table class="table table-bordered table-striped" id="tentang-kami">
-								<thead>
-									<tr class="table">
-										<th scope="col">Deskripsi</th>
-										<th scope="col">Action</th>
-									</tr>
-								</thead>
-								<tbody>
-								</tbody>
-							</table>
-						</div>
-						
+					<div class="bg-light clearfix" style=" margin-bottom: 20px;">  
+                        <a href="add-layanan.html" class="btn btn-success float-right" role="button" aria-disabled="true">Edit About Us</a>
+                    </div>
+					<div class="d-sm-flex">
+						<p id="tentang-kami2"></p>
 					</div>
+					
                     <!-- Content Row -->
                         
 
@@ -197,37 +189,7 @@
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
 
-	<script>
-        $.ajax(
-            {
-                url:'https://ap-southeast-1.aws.data.mongodb-api.com/app/rk-net-lxgkq/endpoint/rktentangkami',
-                type: 'GET',
-                beforeSend: ()=>{
-                    $('#tentang-kami tbody').html('<tr><td colspan="3">Data sedang di-load ...</td></tr>');
-                },
-                success: (res)=>{
-                    $('#tentang-kami tbody').html('');
-
-                    if(! res.length){//kalau koleksi kosong
-                        $('#tentang-kami tbody').html('<tr><td colspan="3">Belum ada datanya ...</td></tr>');
-                    }
-
-                    $.each(res, (index, data)=>{
-                        $('#tentang-kami tbody').append(
-                            '<tr>'+
-                                '<td>'+data.tentang+'</td>'+
-                                '<td><button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button></td>'+
-                            '</tr>'    
-                        );
-                      }
-                    );
-                },
-                error: (err)=>{
-                    console.log(err);
-                }
-            }
-        );
-    </script>
+	<script src="js/about.js"></script>
     
 
 </body>

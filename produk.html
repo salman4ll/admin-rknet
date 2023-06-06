@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>RKNET - Produk</title>
 	<link rel="icon" href="assets/icon.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/admin.css">
+    
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
     
     <!-- Custom styles for this template-->
@@ -117,7 +117,7 @@
                     </button>
                     <ul class="navbar-nav me-auto" id="ul-nav">
 						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="login.html" id="item">&laquo;Kembali ke Situs&nbsp;<i class="fa fa-globe"></i></a>
+							<a class="nav-link active" aria-current="page" href="http://rknet.id/" id="item">&laquo;Kembali ke Situs&nbsp;<i class="fa fa-globe"></i></a>
 						</li>
 					</ul>
                     <ul class="navbar-nav ml-auto">
@@ -203,38 +203,6 @@
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
     
-    <script>
-        $.ajax(
-            {
-                url:'https://ap-southeast-1.aws.data.mongodb-api.com/app/rk-net-fhifn/endpoint/rkharga',
-                type: 'GET',
-                beforeSend: ()=>{
-                    $('#produk tbody').html('<tr><td colspan="3">Data sedang di-load ...</td></tr>');
-                },
-                success: (res)=>{
-                    $('#produk tbody').html('');
-
-                    if(! res.length){//kalau koleksi kosong
-                        $('#produk tbody').html('<tr><td colspan="3">Belum ada datanya ...</td></tr>');
-                    }
-
-                    $.each(res, (index, data)=>{
-                        $('#produk tbody').append(
-                            '<tr>'+
-                                '<td>'+data.title+'</td>'+
-                                '<td>'+data.deskripsi+'</td>'+
-                                '<td>'+data.harga+'</td>'+
-                                '<td><button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button> &nbsp; <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button></td>'+
-                            '</tr>'    
-                        );
-                      }
-                    );
-                },
-                error: (err)=>{
-                    console.log(err);
-                }
-            }
-        );
-    </script>
+    <script src="js/produk.js"></script>
 </body>
 </html>
