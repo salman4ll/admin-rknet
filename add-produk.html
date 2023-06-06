@@ -164,32 +164,25 @@
 
                     <!-- Content Row -->
                     <div class="container">
-						<form>
+						<form id="form">
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Nama Produk</label>
-                                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Hosting">
+                                <input type="text" class="form-control" id="titlenya" placeholder="Hosting" required>
                             </div>
                             <div class="form-group">
-                                <label for="exampleFormControlInput1">Harga</label>
-                                <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="100000">
+                                <label for="exampleFormControlInput1">Deskripsi</label>
+                                <input type="text" class="form-control" id="deskripsinya" placeholder="100000" required>
                             </div>
                             <div class="form-group">
-                                <label for="exampleFormControlTextarea1">Deskripsi</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                <label for="exampleFormControlTextarea1">Harga</label>
+                                <input type="text" class="form-control" id="harganya" placeholder="100000" required>            
                             </div>
                             <div class="form-group">
-                                <label for="exampleFormControlSelect1">Kategori</label>
-                                <select class="form-control" id="exampleFormControlSelect1">
-                                    <option>Kategori 1</option>
-                                    <option>Kategori 2</option>
-                                    <option>Kategori 3</option>
-                                    <option>Kategori 4</option>
-                                    <option>Kategori 5</option>
-                                </select>
-                            </div>
-                            
+                                <label for="exampleFormControlTextarea1">Bandwidth</label>
+                                <input type="text" class="form-control" id="bandwidthnya" placeholder="100000" required>            
+                            </div>                            
                             <div class="bg-light clearfix">  
-                                <button type="button" class="btn btn-success float-right">Submit</button>
+                                <button type="submit" class="btn btn-success float-right">Submit</button>
                             </div>
                         </form>
 					</div>
@@ -202,6 +195,7 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
+    <script src="js/produk.js"></script>
 
     
 
