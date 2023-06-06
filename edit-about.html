@@ -6,10 +6,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>RKNET - Produk</title>
-	<link rel="icon" href="assets/icon.png" type="image/x-icon">
-    
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>RKNET - Tambah Layanan</title>
+
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+	<link rel="shortcut icon" href="assets/icon.png" type="image/x-icon">
     
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
@@ -45,8 +47,8 @@
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
             
-            <li class="nav-item">
-                <a class="nav-link" href="about.html">
+            <li class="nav-item active">
+                <a class="nav-link active" href="about.html">
                     <i class="fas fa-edit fa-edit-alt"></i>
                     <span>About Us</span></a>
             </li>
@@ -73,7 +75,7 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse3"
                     aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-shopping-basket fa-folder"></i>
@@ -81,7 +83,7 @@
                 </a>
                 <div id="collapse3" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item active" href="produk.html">View</a>
+                        <a class="collapse-item" href="produk.html">View</a>
                         <a class="collapse-item" href="add-produk.html">Add Produk</a>
                     </div>
                 </div>
@@ -157,42 +159,20 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Produk</h1>
-                    </div>
-
-                    <div class="bg-light clearfix" style="margin-right: 60px; margin-bottom: 20px;">  
-                        <a href="add-produk.html" class="btn btn-success float-right" role="button" aria-disabled="true">Tambah Produk</a>
+                        <a href="About.html"><h1 class="h3 mb-0 text-gray-800">About &raquo; Edit About</h1></a>
                     </div>
 
                     <!-- Content Row -->
                     <div class="container">
-						<div class="row">
-						    <div class="col-12 table-responsive text-nowrap">
-							    <table class="table table-bordered table-striped" id="produk">
-                                    <thead>
-                                        <tr class="table">
-                                            <th scope="col">Nama Produk</th>
-                                            <th scope="col">Deskripsi</th>
-                                            <th scope="col">Harga</th>
-                                            <th scope="col">Bandwidth</th>
-                                            <th scope="col">Actions</th>
-                                        </tr>
-                                    </thead>
-							        <tbody>
-							        </tbody>
-							    </table>
-						    </div>
-                            
-						</div>
-                        <footer class="bg-light text-center text-lg-start">
-                            <!-- Copyright -->
-                            <div class="text-center p-3">
-                              &copy; 2023 Copyright:
-                              <a class="text-dark" href="https://RKNET.com/">RKNET.com</a>
+						<form id="tentang">
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Deskripsi</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="10"></textarea>
                             </div>
-                            <!-- Copyright -->
-                          </footer>
-                          
+                            <div class="bg-light clearfix">  
+                                <button type="submit" class="btn btn-success float-right">Submit</button>
+                            </div>
+                        </form>
 					</div>
 
                         
@@ -200,10 +180,12 @@
     <!-- Bootstrap core JavaScript-->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
-
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
+    <script src="js/about.js"></script>
+
     
-    <script src="js/produk.js"></script>
+
 </body>
+
 </html>

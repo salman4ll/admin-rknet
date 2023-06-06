@@ -58,11 +58,11 @@ $('#form').submit(
         {
          url:'https://ap-southeast-1.aws.data.mongodb-api.com/app/rk-net-wjgwl/endpoint/client',
          type:'POST',
-         data:{                    
-            nama:$('#namanya').val(),
-            lokasi:$('#lokasinya').val(),
-            deskripsi:$('#deskripsinya').val(),
-              },
+         data:JSON.stringify({ nama:$('#namanya').val(),
+         lokasi:$('#lokasinya').val(),
+         deskripsi:$('#deskripsinya').val(),
+         }),
+         contentType: 'application/json',
          beforeSend:()=>{$('#form button').prop('disabled',true);},
          success:(res)=>{
                       $('#form button').prop('disabled',false);
@@ -70,7 +70,8 @@ $('#form').submit(
                    },
          error:(err)=>{
                     $('#form button').prop('disabled',false);
-                    console.log(err);	
+                    console.log(err.message);	
+                    console.log($('"test":#exampleFormControlTextarea1').val())
                 }
         }
        );
