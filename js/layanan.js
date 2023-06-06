@@ -1,6 +1,6 @@
 $.ajax(
     {
-        url:'https://ap-southeast-1.aws.data.mongodb-api.com/app/rk-net-xopdb/endpoint/rklayanan',
+        url:'https://ap-southeast-1.aws.data.mongodb-api.com/app/rk-net-wjgwl/endpoint/layanan',
         type: 'GET',
         beforeSend: ()=>{
             $('#layanan tbody').html('<tr><td colspan="3">Data sedang di-load ...</td></tr>');

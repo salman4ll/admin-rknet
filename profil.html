@@ -8,11 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>RKNET - Layanan</title>
+
+    <title>RKNET - Dashboard</title>
     
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
 	<link rel="shortcut icon" href="assets/icon.png" type="image/x-icon">
-    
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
@@ -57,7 +57,7 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="layanan.html" data-toggle="collapse" data-target="#collapse2"
                     aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-user-cog fa-folder"></i>
@@ -65,7 +65,7 @@
                 </a>
                 <div id="collapse2" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item active" href="layanan.html">View</a>
+                        <a class="collapse-item" href="layanan.html">View</a>
                         <a class="collapse-item" href="add-layanan.html">Add Layanan</a>
                     </div>
                 </div>
@@ -108,18 +108,28 @@
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
 
-        </ul>
+            
 
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
             <div id="content">
+
+                <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
                     </button>
                     <ul class="navbar-nav me-auto" id="ul-nav">
 						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="http://rknet.id/" id="item">&laquo;Kembali ke Situs&nbsp;<i class="fa fa-globe"></i></a>
+							<a class="nav-link" aria-current="page" href="http://rknet.id/" id="item">&laquo;Kembali ke Situs&nbsp;<i class="fa fa-globe"></i></a>
 						</li>
 					</ul>
                     <ul class="navbar-nav ml-auto">
@@ -131,10 +141,10 @@
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Hai, Admin</span><b class="caret">Salman</b>
                             </a>
                             <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in active"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="profil.html">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400 active"></i>
                                     Profile
                                 </a>
                                 <a class="dropdown-item" href="#">
@@ -159,52 +169,22 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Layanan</h1>
-                    </div>
-
-                    <div class="bg-light clearfix" style="margin-right: 60px; margin-bottom: 20px;">  
-                        <a href="add-layanan.html" class="btn btn-success float-right" role="button" aria-disabled="true">Tambah Layanan</a>
+                        <h1 class="h3 mb-0 text-gray-800">Profil</h1>
                     </div>
 
                     <!-- Content Row -->
-                    <div class="container">
-						<div class="row">
-						    <div class="col-12 table-responsive text-nowrap">
-							    <table class="table table-bordered table-striped" id="layanan">
-                                    <thead>
-                                        <tr class="table">                                        
-                                            <th scope="col">Nama Layanan</th>
-                                            <th scope="col">Deskripsi</th>                                            
-                                            <th scope="col">Actions</th>
-                                        </tr>
-                                    </thead>
-							        <tbody>
-                                        <tr class="table">
-                                            <th scope="row">1</th>
-                                            <td>Layanan Apaan nich</td>
-                                            <td>DeskripsiDeskripsiDeskripsiDeskripsiDeskripsiDeskripsiDeskripsi</td>
-                                            <td>
-                                            <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>
-                                            <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-                                            </td>
-                                        </tr>
-								        
-							        </tbody>
-							    </table>
-						    </div>
-						</div>
-					</div>
+                    <div class="row">
+                        
+                    </div>
 
                         
 
     <!-- Bootstrap core JavaScript-->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
-
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
 
-    <script src="js/layanan.js"></script>
     
 
 </body>
