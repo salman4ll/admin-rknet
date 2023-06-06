@@ -1,6 +1,6 @@
 $.ajax(
     {
-        url:'https://ap-southeast-1.aws.data.mongodb-api.com/app/rk-net-lxgkq/endpoint/rktentangkami',
+        url:'https://ap-southeast-1.aws.data.mongodb-api.com/app/rk-net-wjgwl/endpoint/tentang_kami',
         type: 'GET',
         beforeSend: ()=>{
             $('#tentang-kami2').html('<tr><td colspan="3">Data sedang di-load ...</td></tr>');
